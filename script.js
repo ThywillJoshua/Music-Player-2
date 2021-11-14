@@ -60,7 +60,7 @@ function chillHop() {
       name: "Infinity",
       cover:
         "https://i0.wp.com/xclusiveloaded.com/wp-content/uploads/2020/10/olamide-Carpe-Diem-scaled-1.jpg?fit=768%2C768&ssl=1",
-      artist: "Olamide, Omah Lay",
+      artist: "Olamide",
       audio:
         "https://www.xclusiveloaded.com/wp-content/uploads/2020/10/Olamide_ft_Omah_Lay_-_Infinity.mp3",
       color: ["#FABE2B", "#7B110F"],
@@ -446,8 +446,6 @@ backwardBtn.addEventListener("click", prevSong);
 //Library Click
 librarySong.forEach((song) => {
   song.addEventListener("click", () => {
-    fadeOut();
-
     //Click
     const clicked = song.lastElementChild.firstElementChild.innerText;
     const clickedSong = songsArr.filter((song) => clicked === song.name);
