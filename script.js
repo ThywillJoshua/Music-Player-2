@@ -421,7 +421,7 @@ libraryBtn.addEventListener("click", () => {
   } else if (library.classList.contains("fadeInLeft")) {
     fadeOut();
   } else {
-    fadeIn();
+    fadeOut();
   }
 });
 
