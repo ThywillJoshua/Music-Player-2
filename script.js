@@ -88,7 +88,7 @@ function chillHop() {
   ];
 }
 
-//Elements
+//////DOM ELEMENTS//////
 const library = document.querySelector(".library");
 const libraryBtn = document.querySelector(".library__btn");
 const libraryContent = document.querySelector(".library__content");
@@ -98,6 +98,7 @@ const songImg = document.querySelector(".song__img");
 const songName = document.querySelector(".song__name");
 const artistName = document.querySelector(".artist__name");
 
+const mainSection = document.querySelector(".main__section");
 const backwardBtn = document.querySelector(".backward__btn");
 const playBtn = document.querySelector(".play__btn");
 const forwardBtn = document.querySelector(".forward__btn");
@@ -114,15 +115,10 @@ let currentSong,
   currentAudio,
   currentColor;
 
-function updateUI() {
-  songImg.src = currentImg;
-  songName.innerText = currentName;
-  artistName.innerText = currentArtist;
-  audio.src = currentAudio;
-  progress.style.backgroundImage = `linear-gradient(45deg, ${currentColor[0]}, ${currentColor[1]})`;
-}
+//////FUNCTIONS//////
 
-function currentMusic(i, num) {
+//Set current song data
+function currentSongData(i, num) {
   currentName = i[num].name;
   currentSong = i[num].id;
   currentArtist = i[num].artist;
@@ -130,13 +126,20 @@ function currentMusic(i, num) {
   currentImg = i[num].cover;
   currentColor = i[num].color;
 }
+currentSongData(songsArr, 0);
 
+//Update UI
+function updateUI() {
+  songImg.src = currentImg;
+  songName.innerText = currentName;
+  artistName.innerText = currentArtist;
+  audio.src = currentAudio;
+  progress.style.backgroundImage = `linear-gradient(45deg, ${currentColor[0]}, ${currentColor[1]})`;
+}
+updateUI();
+
+//Fill Library
 function fillLibrary(i) {
-  //Load initial
-  currentMusic(i, 0);
-  updateUI();
-
-  //Fill Library
   i.forEach((song) => {
     const { name, cover, artist } = song;
 
@@ -156,8 +159,8 @@ function fillLibrary(i) {
 
 fillLibrary(songsArr);
 
-//Play Audio
-function play(e) {
+//Play Song
+function play() {
   audio.play();
   playBtn.classList.remove("fa-play");
   playBtn.classList.add("fa-pause");
@@ -172,7 +175,7 @@ function play(e) {
   });
 }
 
-//Pause
+//Pause Song
 function pause() {
   audio.pause();
   playBtn.classList.remove("fa-pause");
@@ -180,39 +183,57 @@ function pause() {
 }
 
 //nextSong
-
 function nextSong() {
+  progress.style.width = 0;
   if (currentSong === songsArr.length - 1) {
-    currentMusic(songsArr, 0);
+    currentSongData(songsArr, 0);
     updateUI();
     play();
   } else {
     currentSong += 1;
     songsArr.filter((song, i) => i === currentSong);
-    currentMusic(songsArr, currentSong);
+    currentSongData(songsArr, currentSong);
     updateUI();
     play();
   }
 }
 
-//fadeIn
+//prevSong
+function prevSong() {
+  progress.style.width = 0;
+  if (currentSong === 0) {
+    currentSongData(songsArr, songsArr.length - 1);
+    updateUI();
+    play();
+  } else {
+    currentSong -= 1;
+    songsArr.filter((_, i) => i === currentSong);
+    currentSongData(songsArr, currentSong);
+    updateUI();
+    play();
+  }
+}
+
+//library fadeIn
 function fadeIn() {
   library.classList.remove("fadeOutLeft");
   library.classList.add("fadeInLeft");
 }
 
-//fadeOut
+//library fadeOut
 function fadeOut() {
   library.classList.remove("fadeInLeft");
   library.classList.add("fadeOutLeft");
 }
 
+//update music progress
 function updateProgress(e) {
   const { duration, currentTime } = e.srcElement;
   const progressPercent = (currentTime / duration) * 100;
   progress.style.width = `${progressPercent}%`;
 }
 
+//set music progress
 function setProgress(e) {
   const width = this.clientWidth;
   const clickX = e.offsetX;
@@ -385,7 +406,15 @@ function setProgress(e) {
   }
 })(window, document);
 
-//Event Handlers
+//Close library on screen touch
+function mobileCloseLibrary() {
+  const x = window.matchMedia("(max-width: 700px)");
+  if (x.matches) {
+    fadeOut();
+  }
+}
+
+//////EVENT LISTENERS//////
 libraryBtn.addEventListener("click", () => {
   if (library.classList.contains("fadeOutLeft")) {
     fadeIn();
@@ -409,36 +438,17 @@ playBtn.addEventListener("click", () => {
 forwardBtn.addEventListener("click", nextSong);
 
 //Skip backward
-backwardBtn.addEventListener("click", () => {
-  if (currentSong === 0) {
-    currentMusic(songsArr, songsArr.length - 1);
-    updateUI();
-    play();
-  } else {
-    currentSong -= 1;
-    songsArr.filter((_, i) => i === currentSong);
-    currentMusic(songsArr, currentSong);
-    updateUI();
-    play();
-  }
-});
+backwardBtn.addEventListener("click", prevSong);
 
 //Library Click
 librarySong.forEach((song) => {
   song.addEventListener("click", () => {
-    //   //Remove other active
-    //   librarySong.forEach((song) => {
-    //     song.classList.remove("active__song");
-    //   });
-
-    //   //Add active song
-    //   song.classList.add("active__song");
     fadeOut();
 
     //Click
     const clicked = song.lastElementChild.firstElementChild.innerText;
     const clickedSong = songsArr.filter((song) => clicked === song.name);
-    currentMusic(clickedSong, 0);
+    currentSongData(clickedSong, 0);
     updateUI();
     play();
   });
@@ -464,9 +474,12 @@ document.body.onkeyup = function (e) {
   }
 };
 
-//Finger swipe to remove library
+//Finger swipe to close library
 document.addEventListener("swiped-left", () => {
   if (library.classList.contains("fadeInLeft")) {
     fadeOut();
   }
 });
+
+//Touch screen to close library
+mainSection.addEventListener("click", mobileCloseLibrary);
