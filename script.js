@@ -4,98 +4,89 @@
 function chillHop() {
   return [
     {
-      name: "Baby Mama",
+      name: "Spunk",
       cover:
-        "https://wadupnaija.com/wp-content/uploads/2021/06/Peruzzi-The-Leaktape.jpg",
+        "https://i1.wp.com/xclusiveloaded.com/wp-content/uploads/2021/08/Major-League-DJz-ft-Wurld-LuuDadeejay-Stamina.jpg?fit=500%2C500&ssl=1",
+      artist: "Wurld",
+      audio:
+        "https://www.xclusiveloaded.com/wp-content/uploads/2021/08/WurlD_-_Spunk.mp3",
+      color: ["#86DEC1", "#1F4669"],
+      id: 0,
+    },
+
+    {
+      name: "Pay",
+      cover:
+        "https://i1.wp.com/xclusiveloaded.com/wp-content/uploads/2021/08/Oxlade-%E2%80%93-Eclipse0AEP.jpg?fit=1000%2C1000&ssl=1",
+      artist: "Oxlade",
+      audio:
+        "https://www.xclusiveloaded.com/wp-content/uploads/2021/08/Oxlade_-_Pay_Me.mp3",
+      color: ["#E9B629", "#273E6E"],
+      id: 1,
+    },
+    {
+      name: "Pull Up",
+      cover:
+        "https://i1.wp.com/xclusiveloaded.com/wp-content/uploads/2021/05/Gabzy-%E2%80%93-Pull-Up.jpg?fit=1024%2C1024&ssl=1",
+      artist: "Gabzy",
+      audio:
+        "https://www.xclusiveloaded.com/wp-content/uploads/2021/05/Gabzy_-_Pull_Up.mp3",
+      color: ["#E42538", "#1B1F85"],
+      id: 2,
+    },
+    {
+      name: "Corny",
+      cover:
+        "https://i2.wp.com/xclusiveloaded.com/wp-content/uploads/2021/05/Rema-Peace-Of-Mind-1.jpeg?fit=600%2C600&ssl=1",
+      artist: "Rema",
+      audio:
+        "https://www.xclusiveloaded.com/wp-content/uploads/2019/07/Rema_-_Corny.mp3",
+      color: ["#FEEC8F", "#E53D21"],
+      id: 3,
+    },
+
+    {
+      name: "Puttin",
+      cover:
+        "https://i2.wp.com/xclusiveloaded.com/wp-content/uploads/2020/10/Tekno-Puttin.jpg?fit=600%2C600&ssl=1",
+      artist: "Tekno",
+      audio:
+        "https://www.xclusiveloaded.com/wp-content/uploads/2020/10/Tekno_-_Puttin.mp3",
+      color: ["#ECD8D2", "#474A4B"],
+      id: 4,
+    },
+
+    {
+      name: "Infinity",
+      cover:
+        "https://i0.wp.com/xclusiveloaded.com/wp-content/uploads/2020/10/olamide-Carpe-Diem-scaled-1.jpg?fit=768%2C768&ssl=1",
+      artist: "Olamide, Omah Lay",
+      audio:
+        "https://www.xclusiveloaded.com/wp-content/uploads/2020/10/Olamide_ft_Omah_Lay_-_Infinity.mp3",
+      color: ["#FABE2B", "#7B110F"],
+      id: 5,
+    },
+
+    {
+      name: "234",
+      cover:
+        "https://i0.wp.com/xclusiveloaded.com/wp-content/uploads/2021/10/MINZ-234.jpg?fit=500%2C500&ssl=1",
+      artist: "Minz",
+      audio:
+        "https://www.xclusiveloaded.com/wp-content/uploads/2021/10/Minz_-_234.mp3",
+      color: ["#A5BDA9", "#324A35"],
+      id: 6,
+    },
+
+    {
+      name: "Juba (Bow)",
+      cover:
+        "https://i2.wp.com/xclusiveloaded.com/wp-content/uploads/2021/04/Peruzzi-Rum-Boogie.jpeg?fit=500%2C500&ssl=1",
       artist: "Peruzzi",
       audio:
-        "https://www.xclusiveloaded.com/wp-content/uploads/2021/06/Peruzzi_-_Baby_Mama.mp3",
-      color: ["#7A4C38", "#1A211D"],
-      id: 0,
-      active: true,
-    },
-
-    {
-      name: "Zambololo",
-      cover:
-        "https://i2.wp.com/www.042nobs.com/wp-content/uploads/2020/11/Umu-Obiligbo-%E2%80%93-Signature-Ife-Chukwu-Kwulu-Album.jpg?w=750&ssl=1",
-      artist: "Umu Obiligbo",
-      audio:
-        "https://www.xclusiveloaded.com/wp-content/uploads/2021/08/Umu_Obiligbo_-_Zambololo.mp3",
-      color: ["#F63EA5", "#190721"],
-      id: 0,
-      active: true,
-    },
-
-    {
-      name: "Vintage",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2021/04/cb0cc6270d7f2e1bb13e44e8832bd5c9b2a61080-1024x1024.jpg",
-      artist: "Needle",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=17088",
-      color: ["#E75C4D", "#5B514F"],
-      id: 1,
-      active: false,
-    },
-    {
-      name: "Waves",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2021/02/80be32197ca7971424bef5e4d0c6810e1d4334c6-1024x1024.jpg",
-      artist: "CYGN",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=14981",
-      color: ["#101330", "#DD6FEC"],
-      id: 2,
-      active: false,
-    },
-    {
-      name: "Desire",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2020/10/b879702e76f573e03ce60da9237ded86b4a3ebd7-1024x1024.jpg",
-      artist: "Psalm trees, Guilaume Muschalle",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=10554",
-      color: ["#FDF7E8", "#527C66"],
-      id: 3,
-      active: false,
-    },
-    {
-      name: "Toofpick",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2020/12/33a2a875828118a3ff260638a88362936104879a-1024x1024.jpg",
-      artist: "Blue Wednesday, Shopan",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=11227",
-      color: ["#9C669A", "#1F2746"],
-      id: 4,
-      active: false,
-    },
-    {
-      name: "Hereafter",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2020/10/b879702e76f573e03ce60da9237ded86b4a3ebd7-1024x1024.jpg",
-      artist: "Makzo",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=11770",
-      color: ["#3C5693", "#F19866"],
-      id: 5,
-      active: false,
-    },
-    {
-      name: "Everything Fades to Blue",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2020/09/c209a7df7b9bc133dfff73ce86ebc3c57c2b73dd-1024x1024.jpg",
-      artist: "Sleepy Fish",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=10034",
-      color: ["#8AC0CD", "#211E37"],
-      id: 6,
-      active: false,
-    },
-    {
-      name: "Going Back",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2020/10/737bb830d34592344eb4a2a1d2c006cdbfc811d9-1024x1024.jpg",
-      artist: "Swørn",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=10310",
-      color: ["#E6D7E0", "#345461"],
+        "https://www.xclusiveloaded.com/wp-content/uploads/2021/04/Peruzzi_-_Juba_Bow_.mp3",
+      color: ["#B08C32", "#40160C"],
       id: 7,
-      active: false,
     },
   ];
 }
