@@ -9,8 +9,20 @@ function chillHop() {
         "https://wadupnaija.com/wp-content/uploads/2021/06/Peruzzi-The-Leaktape.jpg",
       artist: "Peruzzi",
       audio:
-        "https://music.youtube.com/watch?v=dgQWNYPXLOI&list=RDAMVMdgQWNYPXLOI",
+        "https://www.xclusiveloaded.com/wp-content/uploads/2021/06/Peruzzi_-_Baby_Mama.mp3",
       color: ["#7A4C38", "#1A211D"],
+      id: 0,
+      active: true,
+    },
+
+    {
+      name: "Zambololo",
+      cover:
+        "https://i2.wp.com/www.042nobs.com/wp-content/uploads/2020/11/Umu-Obiligbo-%E2%80%93-Signature-Ife-Chukwu-Kwulu-Album.jpg?w=750&ssl=1",
+      artist: "Umu Obiligbo",
+      audio:
+        "https://www.xclusiveloaded.com/wp-content/uploads/2021/08/Umu_Obiligbo_-_Zambololo.mp3",
+      color: ["#F63EA5", "#190721"],
       id: 0,
       active: true,
     },
