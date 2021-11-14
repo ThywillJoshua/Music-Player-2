@@ -194,7 +194,7 @@ function nextSong() {
     play();
   } else {
     currentSong += 1;
-    songsArr.filter((song, i) => i === currentSong);
+    songsArr.filter((_, i) => i === currentSong);
     currentSongData(songsArr, currentSong);
     updateUI();
     play();
