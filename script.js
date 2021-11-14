@@ -9,7 +9,7 @@ function chillHop() {
         "https://wadupnaija.com/wp-content/uploads/2021/06/Peruzzi-The-Leaktape.jpg",
       artist: "Peruzzi",
       audio:
-        "https://wadupnaija.com/wp-content/uploads/2021/06/Peruzzi-Baby-Mama.mp3?_=1",
+        "https://music.youtube.com/watch?v=dgQWNYPXLOI&list=RDAMVMdgQWNYPXLOI",
       color: ["#7A4C38", "#1A211D"],
       id: 0,
       active: true,
