@@ -269,7 +269,7 @@ body {
 /* Media Queries */
 @media only screen and (max-width: 600px) {
   .nav {
-    width: 70vw;
+    width: 85vw;
   }
 
   .main__section {
